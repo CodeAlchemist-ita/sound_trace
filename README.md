@@ -1,10 +1,68 @@
-# Spotify Stats
+<div align="center">
 
-App per telefono (Android/iOS) e PC (browser), fatta con Expo / React Native, che si collega al tuo account Spotify e mostra le tue statistiche di ascolto: minuti, classifiche, calendario, riepilogo dell'anno, amici e molto altro. I dati restano in un database SQLite sul tuo dispositivo; una parte online **facoltativa** su Supabase aggiunge sincronizzazione telefono/PC, amici e sincronizzazione sul server.
+# 🎧 Spotify Stats
 
-> Questo repository è pensato per essere clonato e usato **con la tua istanza**: ti servono la tua app Spotify (gratuita) e, se vuoi le funzioni online, il tuo progetto Supabase (piano gratuito sufficiente). Nessuna chiave o identificatore personale è incluso nel codice.
+**Le tue statistiche di ascolto Spotify, tutto l'anno, non solo a dicembre.**
 
-## Indice
+App open source per Android, iOS e PC che salva ogni brano che ascolti e lo trasforma in classifiche, grafici, un riepilogo dell'anno e statistiche da confrontare con gli amici.
+
+![Expo SDK 58](https://img.shields.io/badge/Expo-SDK%2058-000020?logo=expo&logoColor=white)
+![React Native](https://img.shields.io/badge/React%20Native-0.88-61DAFB?logo=react&logoColor=black)
+![TypeScript](https://img.shields.io/badge/TypeScript-6-3178C6?logo=typescript&logoColor=white)
+![Supabase](https://img.shields.io/badge/Supabase-opzionale-3FCF8E?logo=supabase&logoColor=white)
+![Piattaforme](https://img.shields.io/badge/piattaforme-Android%20%7C%20iOS%20%7C%20Web-informational)
+![Licenza MIT](https://img.shields.io/badge/licenza-MIT-green)
+
+</div>
+
+<!--
+## 📱 Anteprima
+
+| Home | Statistiche | Riepilogo dell'anno | Testo e traduzione |
+|:---:|:---:|:---:|:---:|
+| <img src="docs/screenshots/home.png" width="200"> | <img src="docs/screenshots/stats.png" width="200"> | <img src="docs/screenshots/recap.png" width="200"> | <img src="docs/screenshots/lyrics.png" width="200"> |
+-->
+
+## 🤔 Il problema
+
+Spotify ti mostra le tue statistiche **una volta all'anno**, con Wrapped, e la sua API permette alle app di leggere **solo gli ultimi 50 brani** ascoltati. Quanti minuti hai ascoltato finora quest'anno? Qual è il tuo artista del mese? Quante volte hai ascoltato quella canzone? Non c'è un posto dove vederlo.
+
+## ✨ La soluzione
+
+Spotify Stats si collega al tuo account e **salva ogni ascolto in un database sul tuo dispositivo**, ogni volta che apri l'app, in background o dal server ogni 15 minuti. Puoi anche importare la cronologia completa che Spotify ti invia su richiesta, per avere gli anni passati con i minuti reali.
+
+- 📊 **Statistiche quando vuoi**: minuti, classifiche di brani, artisti e album, calendario a colori, ore e giorni preferiti, brani in salita e in discesa.
+- 🎁 **Il tuo Wrapped, sempre**: riepilogo dell'anno a storie, da salvare e condividere.
+- 👥 **Amici**: guarda cosa ascoltano adesso, confronta le statistiche e consigliagli un brano.
+- 🎤 **Testi e traduzione**: il testo del brano in riproduzione e la traduzione in italiano con un tocco.
+- 🔒 **I dati sono tuoi**: tutto resta sul dispositivo. Il backend è facoltativo e lo ospiti tu.
+
+## 🚀 Avvio rapido
+
+Ti servono solo **Node.js 22+** e un'app Spotify gratuita. Supabase è necessario soltanto per le funzioni online.
+
+1. **Crea un'app Spotify** su <https://developer.spotify.com/dashboard>, scegli *Web API* e aggiungi i Redirect URI `spotifystats://callback` e `http://127.0.0.1:8081/callback`. Copia il **Client ID**. I dettagli sono nella [sezione 4](#4-configurazione-spotify).
+2. **Clona e installa**:
+   ```bash
+   git clone https://github.com/CodeAlchemist-ita/spotify-stats.git
+   cd spotify-stats
+   npm install
+   cp .env.example .env.local   # poi inserisci EXPO_PUBLIC_SPOTIFY_CLIENT_ID
+   ```
+3. **Avvia**:
+   ```bash
+   npm run web        # nel browser, su http://127.0.0.1:8081
+   npx expo start     # sul telefono (development build)
+   ```
+4. **Accedi con Spotify**: i tuoi ascolti iniziano ad accumularsi da subito. Per avere gli anni passati importa la tua cronologia da *Impostazioni → Importa file della cronologia*.
+
+Vuoi gli amici, la sincronizzazione tra telefono e PC o la traduzione dei testi? Segui la [guida Supabase](#6-supabase-passo-per-passo). Per installare l'app sul telefono senza store c'è la [build APK](#8-build-apk-e-ios).
+
+> Questo repository è pensato per essere usato **con la tua istanza**: ti servono la tua app Spotify (gratuita) e, se vuoi le funzioni online, il tuo progetto Supabase (basta il piano gratuito). Nel codice non c'è nessuna chiave né identificatore personale.
+
+---
+
+## 📖 Guida completa
 
 1. [Funzionalità](#1-funzionalità)
 2. [Architettura](#2-architettura)
