@@ -53,7 +53,7 @@ describe('fetchLyrics', () => {
     expect(url).not.toContain('Remastered');
     expect(url).toContain('album_name=Album');
     expect(url).toContain('duration=200');
-    expect(init.headers['Lrclib-Client']).toBe('spotify-stats');
+    expect(init.headers['Lrclib-Client']).toBe('soundtrace');
   });
 
   it('omits the album when there is none', async () => {

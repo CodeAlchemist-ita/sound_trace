@@ -4,7 +4,7 @@ import { getValidAccessToken } from './spotify';
 // Lyrics and translations are never saved anywhere: they live in React state only.
 
 const LRCLIB = 'https://lrclib.net/api';
-const LRCLIB_HEADERS = { 'Lrclib-Client': 'spotify-stats' };
+const LRCLIB_HEADERS = { 'Lrclib-Client': 'soundtrace' };
 
 export const TRANSLATE_URL =
   process.env.EXPO_PUBLIC_TRANSLATE_URL || (SYNC_URL ? SYNC_URL.replace(/\/sync\/?$/, '/translate') : '');

@@ -41,7 +41,7 @@ createServer((req, res) => {
   createReadStream(file).pipe(res);
 }).listen(PORT, HOST, () => {
   const address = `http://${HOST}:${PORT}`;
-  console.log(`Spotify Stats per PC: ${address}  (Ctrl+C per chiudere)`);
+  console.log(`Soundtrace per PC: ${address}  (Ctrl+C per chiudere)`);
   const opener = process.platform === 'win32' ? 'start ""' : process.platform === 'darwin' ? 'open' : 'xdg-open';
   if (!process.env.NO_OPEN) exec(`${opener} ${address}`);
 });

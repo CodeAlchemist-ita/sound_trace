@@ -109,7 +109,7 @@ export async function clearErrorLog() {
 /** Plain text to share or copy: app version and device first, then newest errors first. */
 export function formatErrorLog(entries: ErrorEntry[]) {
   const header = [
-    `Spotify Stats ${Constants.expoConfig?.version ?? '?'}`,
+    `Soundtrace ${Constants.expoConfig?.version ?? '?'}`,
     `${Platform.OS} ${String(Platform.Version ?? '')}`.trim(),
     new Date().toISOString(),
   ].join(' · ');

@@ -27,7 +27,7 @@ export default function ErrorsScreen() {
 
   async function onShare() {
     try {
-      await shareText('spotify-stats-errors.txt', formatErrorLog(await getErrorLog()), t('Condividi il registro errori'));
+      await shareText('soundtrace-errors.txt', formatErrorLog(await getErrorLog()), t('Condividi il registro errori'));
     } catch (e) {
       showMessage(t('Errore'), e instanceof Error ? e.message : String(e));
     }

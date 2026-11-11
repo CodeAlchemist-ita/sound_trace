@@ -454,7 +454,7 @@ export const en: Record<string, string> = {
   'Il tuo {year}': 'Your {year}',
   'Condividi il tuo riepilogo': 'Share your recap',
   'Condividi il tuo {year}': 'Share your {year}',
-  'Spotify Stats · il mio {year} in musica': 'Spotify Stats · my {year} in music',
+  'Soundtrace · il mio {year} in musica': 'Soundtrace · my {year} in music',
   'Fai uno screenshot per condividerlo.': 'Take a screenshot to share it.',
   'Ecco com’è andato il tuo anno in musica, fino a oggi.': 'Here’s how your year in music has gone so far.',
   'Ecco com’è andato il tuo anno in musica.': 'Here’s how your year in music went.',

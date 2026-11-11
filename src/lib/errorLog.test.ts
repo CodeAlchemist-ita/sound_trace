@@ -85,7 +85,7 @@ describe('formatErrorLog', () => {
     expect(text.indexOf('newer')).toBeLessThan(text.indexOf('older'));
     expect(text).toContain('crash (×4)');
     expect(text).toContain('at line 1');
-    expect(text.startsWith('Spotify Stats')).toBe(true);
+    expect(text.startsWith('Soundtrace')).toBe(true);
   });
 
   it('says so when the log is empty', () => {

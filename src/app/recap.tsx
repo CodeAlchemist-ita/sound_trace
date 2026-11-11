@@ -246,7 +246,7 @@ export default function RecapScreen() {
           </View>
 
           {capturing ? (
-            <Text style={[styles.watermark, { color: fg }]}>{t('Spotify Stats · il mio {year} in musica', { year: recap.year })}</Text>
+            <Text style={[styles.watermark, { color: fg }]}>{t('Soundtrace · il mio {year} in musica', { year: recap.year })}</Text>
           ) : index === 0 && years.length > 1 ? (
             <View style={styles.years}>
               {years.map((y) => (

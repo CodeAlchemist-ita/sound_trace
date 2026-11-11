@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🎧 Spotify Stats
+# 🎧 Soundtrace
 
 **Le tue statistiche di ascolto Spotify, tutto l'anno, non solo a dicembre.**
 
@@ -29,7 +29,7 @@ Spotify ti mostra le tue statistiche **una volta all'anno**, con Wrapped, e la s
 
 ## ✨ La soluzione
 
-Spotify Stats si collega al tuo account e **salva ogni ascolto in un database sul tuo dispositivo**, ogni volta che apri l'app, in background o dal server ogni 15 minuti. Puoi anche importare la cronologia completa che Spotify ti invia su richiesta, per avere gli anni passati con i minuti reali.
+Soundtrace si collega al tuo account e **salva ogni ascolto in un database sul tuo dispositivo**, ogni volta che apri l'app, in background o dal server ogni 15 minuti. Puoi anche importare la cronologia completa che Spotify ti invia su richiesta, per avere gli anni passati con i minuti reali.
 
 - 📊 **Statistiche quando vuoi**: minuti, classifiche di brani, artisti e album, calendario a colori, ore e giorni preferiti, brani in salita e in discesa.
 - 🎁 **Il tuo Wrapped, sempre**: riepilogo dell'anno a storie, da salvare e condividere.
@@ -400,8 +400,8 @@ Senza configurazione, `expo prebuild` genera un progetto Android che firma la re
 1. Genera il keystore **fuori dal repository** e fanne un backup sicuro (se lo perdi non potrai più aggiornare l'app):
 
    ```bash
-   keytool -genkeypair -v -storetype PKCS12 -keystore spotify-stats-release.jks \
-     -alias spotify-stats -keyalg RSA -keysize 2048 -validity 10000
+   keytool -genkeypair -v -storetype PKCS12 -keystore soundtrace-release.jks \
+     -alias soundtrace -keyalg RSA -keysize 2048 -validity 10000
    ```
 
    (`keytool` è nel JDK di Android Studio, cartella `jbr/bin`.) I file `*.jks` sono già in `.gitignore`.
@@ -409,9 +409,9 @@ Senza configurazione, `expo prebuild` genera un progetto Android che firma la re
 2. Metti le credenziali in `~/.gradle/gradle.properties` (il file globale di Gradle, **non** quello del progetto):
 
    ```
-   RELEASE_STORE_FILE=C:/percorso/sicuro/spotify-stats-release.jks
+   RELEASE_STORE_FILE=C:/percorso/sicuro/soundtrace-release.jks
    RELEASE_STORE_PASSWORD=...
-   RELEASE_KEY_ALIAS=spotify-stats
+   RELEASE_KEY_ALIAS=soundtrace
    RELEASE_KEY_PASSWORD=...
    ```
 
@@ -493,7 +493,7 @@ Valutazione completa, punti deboli noti e miglioramenti proposti: [`docs/sicurez
 
 ## 13. Note legali
 
-- **Questo progetto non è affiliato, sponsorizzato né approvato da Spotify.** «Spotify» è un marchio registrato di Spotify AB. Il nome «Spotify Stats» descrive solo ciò che l'app fa; se pubblichi una tua versione valuta se cambiare nome e icona.
+- **Questo progetto non è affiliato, sponsorizzato né approvato da Spotify.** «Spotify» è un marchio registrato di Spotify AB. Se pubblichi una tua versione, non usare «Spotify» nel nome dell’app né il suo logo.
 - L'uso dell'API è soggetto ai [Termini per sviluppatori Spotify](https://developer.spotify.com/terms) e alle sue linee guida: rispettale (tra l'altro, non usare i dati Spotify per addestrare modelli di machine learning e rispetta i limiti dell'app in Development mode). Sei responsabile della tua app Spotify e dei dati dei tuoi utenti.
 - **Testi dei brani:** sono protetti da copyright. [LRCLIB](https://lrclib.net) è un servizio gestito dalla comunità; l'app lo interroga **solo dal dispositivo** dell'utente, per visualizzare il testo del brano che sta già ascoltando, e **non salva né ridistribuisce** nulla. Non usare questa funzione in un prodotto commerciale o distribuito su larga scala senza una licenza adeguata per i testi.
 - **Traduzione:** usa DeepL; valgono i [termini di DeepL](https://www.deepl.com/pro-license). Il testo inviato viene inoltrato a DeepL su richiesta dell'utente.
@@ -512,4 +512,4 @@ Per orientarti: `src/app/` contiene le schermate (Expo Router), `src/components/
 
 ## 15. Licenza
 
-[MIT](LICENSE). Copyright (c) 2026 Spotify Stats contributors.
+[MIT](LICENSE). Copyright (c) 2026 Soundtrace contributors.

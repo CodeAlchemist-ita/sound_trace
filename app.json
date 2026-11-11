@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "Spotify Stats",
+    "name": "Soundtrace",
     "slug": "spotify-stats",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -23,7 +23,7 @@
     "web": {
       "favicon": "./assets/favicon.png",
       "output": "single",
-      "name": "Spotify Stats",
+      "name": "Soundtrace",
       "backgroundColor": "#0E0F12",
       "themeColor": "#0E0F12"
     },
