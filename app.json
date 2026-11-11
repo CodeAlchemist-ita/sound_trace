@@ -1,0 +1,46 @@
+{
+  "expo": {
+    "name": "Spotify Stats",
+    "slug": "spotify-stats",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.example.spotifystats"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#0E0F12",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false,
+      "package": "com.example.spotifystats"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "output": "single",
+      "name": "Spotify Stats",
+      "backgroundColor": "#0E0F12",
+      "themeColor": "#0E0F12"
+    },
+    "plugins": [
+      "expo-web-browser",
+      "expo-secure-store",
+      "expo-sqlite",
+      "expo-router",
+      "expo-background-task",
+      "expo-system-ui",
+      "expo-font",
+      "expo-image",
+      "./plugins/withAndroidBuildFixes"
+    ],
+    "scheme": "spotifystats",
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}

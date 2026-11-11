@@ -1,0 +1,22 @@
+# Minimal config used by "supabase functions deploy" / "supabase db push".
+project_id = "spotify-stats"
+
+[functions.sync]
+# The function authenticates callers with their Spotify token, not a Supabase JWT.
+verify_jwt = false
+
+[functions.register]
+# Registration needs no login; linking checks the caller's Spotify token itself.
+verify_jwt = false
+
+[functions.friends]
+# Like sync: the caller is identified by their Spotify token.
+verify_jwt = false
+
+[functions.token]
+# Devices authenticate with their Spotify token (handover) or device key; the cron with a shared secret.
+verify_jwt = false
+
+[functions.translate]
+# Like friends: the caller is identified by their Spotify token.
+verify_jwt = false

@@ -1,0 +1,22 @@
+{
+  "cli": {
+    "appVersionSource": "remote"
+  },
+  "build": {
+    "preview": {
+      "distribution": "internal",
+      "android": { "buildType": "apk" },
+      "env": {
+        "EXPO_PUBLIC_SPOTIFY_CLIENT_ID": "<YOUR_SPOTIFY_CLIENT_ID>",
+        "EXPO_PUBLIC_SYNC_URL": "https://<YOUR_PROJECT_REF>.supabase.co/functions/v1/sync"
+      }
+    },
+    "production": {
+      "autoIncrement": true,
+      "env": {
+        "EXPO_PUBLIC_SPOTIFY_CLIENT_ID": "<YOUR_SPOTIFY_CLIENT_ID>",
+        "EXPO_PUBLIC_SYNC_URL": "https://<YOUR_PROJECT_REF>.supabase.co/functions/v1/sync"
+      }
+    }
+  }
+}
