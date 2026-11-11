@@ -44,8 +44,8 @@ Ti servono solo **Node.js 22+** e un'app Spotify gratuita. Supabase è necessari
 1. **Crea un'app Spotify** su <https://developer.spotify.com/dashboard>, scegli *Web API* e aggiungi i Redirect URI `spotifystats://callback` e `http://127.0.0.1:8081/callback`. Copia il **Client ID**. I dettagli sono nella [sezione 4](#4-configurazione-spotify).
 2. **Clona e installa**:
    ```bash
-   git clone https://github.com/CodeAlchemist-ita/spotify-stats.git
-   cd spotify-stats
+   git clone https://github.com/CodeAlchemist-ita/sound_trace.git
+   cd sound_trace
    npm install
    cp .env.example .env.local   # poi inserisci EXPO_PUBLIC_SPOTIFY_CLIENT_ID
    ```
@@ -194,8 +194,8 @@ Funzioni (`supabase/functions/`):
 ## 5. Configurazione locale
 
 ```bash
-git clone <url-del-tuo-repository> spotify-stats
-cd spotify-stats
+git clone <url-del-tuo-repository> sound_trace
+cd sound_trace
 npm install
 cp .env.example .env.local        # su Windows PowerShell: Copy-Item .env.example .env.local
 ```
