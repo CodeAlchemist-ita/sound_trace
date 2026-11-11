@@ -566,6 +566,7 @@ export const en: Record<string, string> = {
   // ---------- Lyrics ----------
   Testo: 'Lyrics',
   'Testo non trovato': 'Lyrics not found',
+  'Cerca il testo sul web': 'Search the lyrics on the web',
   'Brano strumentale': 'Instrumental track',
   'Nessun brano in riproduzione.': 'Nothing is playing.',
   'Per vedere il testo serve il permesso di Spotify sul brano in riproduzione: accedi di nuovo dalle Impostazioni.':

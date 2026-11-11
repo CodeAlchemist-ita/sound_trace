@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
-import { ActivityIndicator, Animated, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { ActivityIndicator, Animated, Linking, ScrollView, StyleSheet, Text, View } from 'react-native';
 
 import { Cover } from '@/components/Cover';
 import { FadeIn } from '@/components/FadeIn';
 import { Tap } from '@/components/Tap';
 import { msg, t } from '@/lib/i18n';
+import { lyricsSearchUrl } from '@/lib/lyrics';
 import { useLyrics, type LyricsView } from '@/lib/useLyrics';
 import { useNowPlaying } from '@/lib/nowPlaying';
 import { contentColumn, makeStyles, radius, useTheme } from '@/lib/theme';
@@ -60,7 +61,23 @@ export default function LyricsScreen() {
     }
     if (!track) return <Text style={styles.message}>{t('Nessun brano in riproduzione.')}</Text>;
     if (lyrics.status === 'idle' || lyrics.status === 'loading') return <Skeleton lines={12} />;
-    if (lyrics.status === 'not_found') return <Text style={styles.message}>{t('Testo non trovato')}</Text>;
+    if (lyrics.status === 'not_found') {
+      return (
+        <View style={styles.notFound}>
+          <Text style={styles.message}>{t('Testo non trovato')}</Text>
+          <Tap
+            onPress={() => Linking.openURL(lyricsSearchUrl(track.trackName, track.artist)).catch(() => undefined)}
+            style={styles.primary}
+            accessibilityRole="link"
+          >
+            <Text style={styles.primaryText}>{t('Cerca il testo sul web')}</Text>
+          </Tap>
+          <Tap onPress={retry} style={styles.secondary} accessibilityRole="button">
+            <Text style={styles.secondaryText}>{t('Riprova')}</Text>
+          </Tap>
+        </View>
+      );
+    }
     if (lyrics.status === 'instrumental') return <Text style={styles.message}>{t('Brano strumentale')}</Text>;
     if (lyrics.status === 'error') {
       return (
@@ -213,6 +230,7 @@ const useStyles = makeStyles((colors) =>
     segmentOn: { backgroundColor: colors.accent },
     segmentText: { color: colors.muted, fontWeight: '700', fontSize: 13 },
     segmentTextOn: { color: colors.onAccent },
+    notFound: { alignItems: 'center', gap: 4 },
     errorBox: { alignItems: 'center', flexDirection: 'row', gap: 8, marginBottom: 8, flexWrap: 'wrap' },
     error: { color: colors.muted, fontSize: 13 },
     lyrics: { color: colors.text, fontSize: 16, lineHeight: 25 },
